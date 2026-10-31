@@ -1,0 +1,212 @@
+[
+  {
+    "topic": "matematica-funcoes-graficos", "day": 2, "booklet": 5, "examQuestion": 167, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma cooperativa registra quatro safras. As áreas foram 180, 200, 220 e 240 hectares; as produtividades foram 35, 40, 35 e 45 sacas de 50 kg por hectare. Qual sequência representa a produção, em toneladas?",
+    "options": ["315, 400, 385 e 540", "630, 800, 770 e 1 080", "315, 385, 400 e 540", "350, 440, 540 e 500", "630, 400, 770 e 540"], "correct": 0,
+    "explanation": "Multiplica-se área por sacas por hectare e por 50 kg, convertendo para toneladas. A produção é 315, 400, 385 e 540 t. Os dados e a formulação desta versão são diferentes do item-fonte."
+  },
+  {
+    "topic": "matematica-geometria-espacial", "day": 2, "booklet": 5, "examQuestion": 168, "difficulty": 5,
+    "prompt": "Adaptada do ENEM 2025: serão fabricadas 100 medalhas cilíndricas de diâmetro 10 cm e espessura 2 mm. Em cada uma, um prisma de base quadrada atravessa o cilindro; a diagonal do quadrado mede 10 cm. A parte externa ao prisma será revestida. Usando π = 3,14, qual volume total de revestimento é necessário?",
+    "options": ["285 cm³", "570 cm³", "785 cm³", "1 000 cm³", "1 570 cm³"], "correct": 1,
+    "explanation": "A área do círculo é 78,5 cm². O quadrado com diagonal 10 cm tem área 50 cm². Como a espessura é 0,2 cm, o volume total é 100 × (78,5 − 50) × 0,2 = 570 cm³."
+  },
+  {
+    "topic": "matematica-geometria-espacial", "day": 2, "booklet": 5, "examQuestion": 174, "difficulty": 5,
+    "prompt": "Adaptada do ENEM 2025: uma caixa de descarga mede 3 dm × 2 dm na base e tem coluna de água de 1,5 dm. Para reduzir o consumo, serão submersas garrafas vedadas que deslocam 0,4 L cada. A descarga ainda deve liberar pelo menos 6 L. Qual é o número máximo de garrafas?",
+    "options": ["5", "6", "7", "8", "9"], "correct": 2,
+    "explanation": "A caixa comporta 9 L. Restam 3 L para deslocamento sem reduzir a descarga abaixo de 6 L. Com 0,4 L por garrafa, cabem no máximo 7 garrafas (2,8 L); 8 deslocariam 3,2 L."
+  },
+  {
+    "topic": "matematica-estatistica-probabilidade", "day": 2, "booklet": 5, "examQuestion": 179, "difficulty": 5,
+    "prompt": "Adaptada do ENEM 2025: oito livros diferentes, entre eles um atlas e uma biografia, serão distribuídos a três estudantes. A estudante mais velha receberá três livros, o mais novo também três, e o terceiro ficará com os dois restantes. A mais velha receberá exatamente um dos dois livros especiais. De quantas formas isso pode ocorrer?",
+    "options": ["150", "240", "300", "360", "560"], "correct": 2,
+    "explanation": "Há 2 escolhas para o livro especial da estudante mais velha, C(6,2)=15 escolhas para os outros dois livros dela e C(5,3)=10 escolhas para os três do mais novo. O total é 2 × 15 × 10 = 300."
+  },
+  {
+    "topic": "fisica-mecanica", "day": 2, "booklet": 5, "examQuestion": 180, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma atleta percorre 5 km em 40 minutos de uma prova. Nos 24 minutos seguintes, mantém a mesma velocidade média. Qual distância total ela percorre nesses 64 minutos?",
+    "options": ["6 km", "7 km", "8 km", "9 km", "10 km"], "correct": 2,
+    "explanation": "A velocidade média é 5/40 = 0,125 km/min. Em 64 minutos, a distância total é 0,125 × 64 = 8 km."
+  },
+  {
+    "topic": "biologia-ecologia", "day": 2, "booklet": 5, "examQuestion": 95, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma espécie de lagarto de ambiente árido conserva água e pode passar longos períodos sem alimento. Em qual bioma brasileiro condições de seca prolongada tornam mais provável encontrar adaptações semelhantes?",
+    "options": ["Amazônia", "Pantanal", "Caatinga", "Pampa", "Mata Atlântica"], "correct": 2,
+    "explanation": "A Caatinga tem clima semiárido e longos períodos secos, condições que favorecem adaptações relacionadas à economia de água e à escassez sazonal de alimento."
+  },
+  {
+    "topic": "quimica-solucoes-organica", "day": 2, "booklet": 5, "examQuestion": 96, "difficulty": 2,
+    "prompt": "Adaptada do ENEM 2025: após um processo que remove sais dissolvidos, uma água é usada como solvente em laboratório e em baterias. O processo também retira íons necessários à ingestão regular. Qual tipo de água corresponde a essa descrição?",
+    "options": ["Água dura", "Água mineral", "Água destilada", "Água salobra", "Água oxigenada"], "correct": 2,
+    "explanation": "A destilação remove sais dissolvidos. A água destilada é útil em aplicações laboratoriais e técnicas, mas não é indicada como fonte habitual de minerais na alimentação."
+  },
+  {
+    "topic": "biologia-genetica-evolucao", "day": 2, "booklet": 5, "examQuestion": 102, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: em uma espécie de inseto, o alelo A determina cor escura e domina sobre a. Dois indivíduos heterozigotos são cruzados. Qual proporção fenotípica é esperada entre os descendentes, considerando dominância completa?",
+    "options": ["1 escuro : 1 claro", "1 escuro : 2 intermediários : 1 claro", "2 escuros : 1 claro", "9 escuros : 3 claros", "3 escuros : 1 claro"], "correct": 4,
+    "explanation": "No cruzamento Aa × Aa, os genótipos esperados são 1 AA : 2 Aa : 1 aa. Com dominância completa, AA e Aa têm cor escura, resultando em 3 escuros para 1 claro."
+  },
+  {
+    "topic": "fisica-mecanica", "day": 2, "booklet": 5, "examQuestion": 103, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma caixa desliza de um piso horizontal para uma rampa retilínea de inclinação constante. O coeficiente de atrito cinético não muda. Como se compara a força de atrito na rampa com a força no piso horizontal?",
+    "options": ["Aumenta continuamente ao longo da rampa.", "Permanece igual porque a rugosidade não mudou.", "Diminui ao entrar na rampa e permanece constante nela.", "Torna-se nula durante todo o movimento na rampa.", "Aumenta porque o peso do objeto cresce na subida."], "correct": 2,
+    "explanation": "Na rampa, a normal vale mg cos(θ), menor que mg no piso horizontal. Como o atrito cinético é μN e o ângulo é constante, ele diminui na transição e permanece constante ao longo da rampa."
+  },
+  {
+    "topic": "biologia-ecologia", "day": 2, "booklet": 5, "examQuestion": 107, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: a água usada para resfriar uma usina retorna mais quente a um rio. Qual efeito pode comprometer organismos aquáticos mesmo sem a descarga de uma substância tóxica?",
+    "options": ["Aumentar a solubilidade do oxigênio na água.", "Eliminar a variação diária de temperatura.", "Converter sais dissolvidos em nutrientes.", "Reduzir a atividade metabólica de todos os organismos a zero.", "Diminuir o oxigênio dissolvido e alterar as condições de vida."], "correct": 4,
+    "explanation": "O aquecimento da água reduz a solubilidade do oxigênio e pode alterar o metabolismo e as condições de sobrevivência de espécies aquáticas, caracterizando poluição térmica."
+  },
+  {
+    "topic": "fisica-eletricidade-ondas", "day": 2, "booklet": 5, "examQuestion": 113, "difficulty": 5,
+    "prompt": "Adaptada do ENEM 2025: um aparelho de resistência R funciona com tensão V, mas a fonte disponível fornece 1,2V. Para manter V no aparelho, qual resistor de proteção deve ser ligado em série?",
+    "options": ["Um resistor em paralelo de resistência 0,2R.", "Um resistor em série de resistência 0,8R.", "Um resistor em série de resistência 1,2R.", "Um resistor em paralelo de resistência 0,8R.", "Um resistor em série de resistência 0,2R."], "correct": 4,
+    "explanation": "Para a tensão no aparelho permanecer V, a corrente deve ser V/R. O resistor em série deve dissipar a diferença 0,2V; assim, Rₚ = 0,2V ÷ (V/R) = 0,2R."
+  },
+  {
+    "topic": "fisica-ondas-acustica", "day": 2, "booklet": 5, "examQuestion": 118, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: um sensor interrompe um feixe de 15 cm de largura. O menor perfil de uma pessoa tem 20 cm de espessura, e a velocidade máxima considerada é 5 m/s. Qual tempo de resposta garante detectar a passagem mais rápida?",
+    "options": ["20 ms", "70 ms", "150 ms", "300 ms", "700 ms"], "correct": 1,
+    "explanation": "A interrupção dura ao menos (0,15 + 0,20) m ÷ 5 m/s = 0,07 s, ou 70 ms. O sensor deve responder em até esse intervalo para registrar a passagem."
+  },
+  {
+    "topic": "quimica-eletroquimica-pilhas", "day": 2, "booklet": 5, "examQuestion": 126, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma peça de prata escurecida por sulfeto de prata é colocada em solução salina em contato com alumínio. Qual processo redox permite recuperar a prata metálica?",
+    "options": ["A prata metálica oxida e o alumínio também oxida.", "O alumínio oxida, fornecendo elétrons para reduzir o sulfeto de prata.", "O cloreto reduz o alumínio e oxida a prata.", "A água fornece elétrons para oxidar o sulfeto de prata.", "O sulfeto de prata se converte em prata sem transferência de elétrons."], "correct": 1,
+    "explanation": "O alumínio perde elétrons (oxida) e os fornece à espécie de prata, que os recebe e é reduzida a Ag metálica. A solução permite o transporte iônico no processo."
+  },
+  {
+    "topic": "quimica-solucoes-organica", "day": 2, "booklet": 5, "examQuestion": 132, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: um filtro usa carvão ativado poroso para remover compostos orgânicos da água. Qual propriedade explica a maior eficiência em relação a um carvão com superfície pouco porosa?",
+    "options": ["Maior massa para o mesmo volume.", "Maior dureza macroscópica.", "Menor capacidade de conduzir calor.", "Maior área superficial disponível para adsorção.", "Maior densidade do material."], "correct": 3,
+    "explanation": "A porosidade amplia muito a área de contato. Mais moléculas podem aderir à superfície do carvão por adsorção, aumentando a remoção de contaminantes."
+  },
+  {
+    "topic": "biologia-fisiologia-humana", "day": 2, "booklet": 5, "examQuestion": 133, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: genes que controlam um ciclo circadiano são inseridos em uma bactéria que não tinha esse relógio biológico. Se os genes inseridos se expressam, quais funções são esperadas no organismo modificado?",
+    "options": ["Somente o metabolismo da bactéria receptora.", "O ciclo circadiano próprio da receptora, sem alteração do metabolismo.", "O metabolismo do organismo doador e o relógio da receptora.", "O ciclo circadiano do doador e o metabolismo da bactéria receptora.", "Somente o ciclo circadiano do organismo doador."], "correct": 3,
+    "explanation": "Os genes transferidos carregam a informação associada ao relógio circadiano do organismo doador, enquanto a bactéria receptora mantém seu próprio metabolismo."
+  },
+  {
+    "topic": "matematica-aritmetica-porcentagem", "day": 2, "booklet": 5, "examQuestion": 140, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma cantina compara o sódio total por pacote. Os rótulos indicam: I, 90 mg por porção e 4 porções; II, 120 mg e 3 porções; III, 55 mg e 5 porções; IV, 130 mg e 2 porções; V, 50 mg e 6 porções. Qual pacote tem menos sódio?",
+    "options": ["I", "II", "III", "IV", "V"], "correct": 3,
+    "explanation": "Os totais são, respectivamente, 360, 360, 275, 260 e 300 mg. O pacote IV tem a menor quantidade total, apesar de ter mais sódio por porção que alguns outros."
+  },
+  {
+    "topic": "matematica-geometria-espacial", "day": 2, "booklet": 5, "examQuestion": 141, "difficulty": 5,
+    "prompt": "Adaptada do ENEM 2025: uma peça é formada por um prisma hexagonal regular e um tronco de pirâmide hexagonal, unidos pelas bases congruentes de contato. As duas bases externas têm tamanhos diferentes. Quantas cores são necessárias para pintar faces congruentes com a mesma cor e faces não congruentes com cores distintas?",
+    "options": ["3", "5", "6", "4", "12"], "correct": 3,
+    "explanation": "Há quatro classes de faces: retângulos laterais do prisma, trapézios laterais do tronco, base hexagonal externa do prisma e base hexagonal externa do tronco. As duas bases externas têm dimensões diferentes."
+  },
+  {
+    "topic": "matematica-estatistica-probabilidade", "day": 2, "booklet": 5, "examQuestion": 145, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: em uma amostra de 100 internautas, 40 são homens e 75 acessam uma rede social. Entre os homens, 30 acessam a rede. Escolhendo uma pessoa ao acaso, qual é a probabilidade de ela ser homem e acessar a rede?",
+    "options": ["10%", "30%", "40%", "75%", "90%"], "correct": 1,
+    "explanation": "O evento conjunto inclui 30 pessoas entre as 100 da amostra. Portanto, a probabilidade é 30/100 = 30%."
+  },
+  {
+    "topic": "matematica-aritmetica-porcentagem", "day": 2, "booklet": 5, "examQuestion": 146, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: um carro percorre 30 km por dia durante sete dias e consome 1 m³ de GNV a cada 13 km. Para garantir apenas um abastecimento semanal, qual cilindro tem a menor capacidade suficiente entre 10, 14, 17, 21 e 25 m³?",
+    "options": ["10 m³", "14 m³", "17 m³", "21 m³", "25 m³"], "correct": 2,
+    "explanation": "A distância semanal é 210 km. O consumo é 210/13 ≈ 16,15 m³; portanto, a menor capacidade suficiente é 17 m³."
+  },
+  {
+    "topic": "matematica-algebra-funcoes", "day": 2, "booklet": 5, "examQuestion": 149, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma escola teve 25% das matrículas em francês em 2023. Em 2024, totalizou 80 matrículas. Se o total de 2025 permanecer em 80 e a distribuição voltar às proporções de 2023, quantas matrículas serão em francês?",
+    "options": ["8", "12", "16", "18", "20"], "correct": 4,
+    "explanation": "Mantendo a proporção de 25% sobre 80 matrículas, obtém-se 0,25 × 80 = 20 matrículas."
+  },
+  {
+    "topic": "matematica-funcoes-graficos", "day": 2, "booklet": 5, "examQuestion": 150, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma tela mostra cinco deslocamentos. I: 4 cm na escala 1:100; II: 3 cm em 1:200; III: 5 cm em 1:100; IV: 2 cm em 1:400; V: 7 cm em 1:100. Qual deslocamento real foi maior?",
+    "options": ["I, com 4 m", "II, com 6 m", "IV, com 8 m", "V, com 7 m", "III, com 5 m"], "correct": 2,
+    "explanation": "Multiplicando cada comprimento desenhado pelo denominador da escala: I=4 m, II=6 m, III=5 m, IV=8 m e V=7 m. O maior é IV."
+  },
+  {
+    "topic": "literatura-poesia-voz-imagens", "day": 1, "booklet": 2, "examQuestion": 1, "examNote": "opção Espanhol", "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: um poema contrapõe lembranças de liberdade na infância às restrições da vida adulta e repete um pedido de liberdade. Que efeito a repetição produz no conjunto?",
+    "options": ["Transforma a voz poética em narrador neutro.", "Reforça a tensão entre a infância imaginada e os limites presentes.", "Enumera ações sem estabelecer relação entre os tempos.", "Elimina a dimensão afetiva do poema.", "Apresenta uma definição literal de liberdade."], "correct": 1,
+    "explanation": "A repetição conecta as imagens da infância ao desejo de liberdade e torna mais forte o contraste com as restrições da vida adulta."
+  },
+  {
+    "topic": "filosofia-antiga-moderna", "day": 1, "booklet": 2, "examQuestion": 3, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma filósofa defende que a reflexão deve ajudar a enfrentar pobreza, opressão e doutrinação. Qual concepção de filosofia está expressa?",
+    "options": ["Uma atividade isolada de problemas humanos.", "Uma técnica para provar que todo conflito tem solução única.", "Uma investigação ligada à vida e à transformação de condições sociais.", "Um conjunto de regras que dispensa debate público.", "Uma disciplina restrita à classificação de conceitos abstratos."], "correct": 2,
+    "explanation": "A posição vincula a reflexão filosófica aos problemas concretos e à possibilidade de transformar condições de vida."
+  },
+  {
+    "topic": "portugues-generos", "day": 1, "booklet": 2, "examQuestion": 6, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma cronista compara bilhetes manuscritos, originais datilografados e textos digitais. Qual conclusão reconhece melhor as mudanças nos modos de escrita?",
+    "options": ["Uma tecnologia nova sempre elimina a anterior.", "A escrita manual só existe em contextos sem acesso à internet.", "Os suportes e modos de escrita podem coexistir e atender a necessidades distintas.", "A autenticidade de um texto depende exclusivamente da caligrafia.", "A escrita digital impede qualquer interação pessoal."], "correct": 2,
+    "explanation": "A história dos suportes mostra transformações e coexistência: novas tecnologias ampliam possibilidades sem apagar automaticamente práticas anteriores."
+  },
+  {
+    "topic": "arte-brasileira", "day": 1, "booklet": 2, "examQuestion": 11, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma exposição apresenta retratos nomeados de lideranças negras e indígenas pouco representadas em coleções tradicionais. Que efeito essa escolha pode produzir?",
+    "options": ["Reforçar que somente grupos dominantes podem ser retratados.", "Retirar a arte do debate sobre memória social.", "Afirmar identidades e tornar visíveis sujeitos historicamente marginalizados.", "Substituir pesquisa histórica por uma leitura exclusivamente decorativa.", "Provar que as desigualdades de representação já foram superadas."], "correct": 2,
+    "explanation": "Dar nome e protagonismo a sujeitos pouco representados amplia a memória visual e questiona desigualdades na construção da história da arte."
+  },
+  {
+    "topic": "educacao-fisica-inclusao-esporte", "day": 1, "booklet": 2, "examQuestion": 14, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma transmissão esportiva celebra histórias individuais de superação, mas não mostra barreiras de acesso, seleção e condições de treinamento. Qual análise é mais consistente?",
+    "options": ["O esporte de alto rendimento já é acessível a todas as pessoas.", "A narrativa motivacional pode ocultar limites e desigualdades da prática esportiva.", "A mídia é incapaz de influenciar a imagem pública do esporte.", "Diferenças de desempenho provam falta de esforço individual.", "A inclusão depende somente de ampliar o tempo de transmissão."], "correct": 1,
+    "explanation": "A celebração de casos excepcionais pode esconder barreiras estruturais e custos humanos presentes no esporte de alto rendimento."
+  },
+  {
+    "topic": "sociologia-cultura-identidade", "day": 1, "booklet": 2, "examQuestion": 18, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma campanha mostra crianças imaginando profissões diferentes e discute como o racismo limita expectativas sociais. Qual objetivo melhor descreve a ação?",
+    "options": ["Substituir políticas educacionais por escolhas individuais.", "Sensibilizar a sociedade para os efeitos do racismo e para a importância de combatê-lo.", "Defender que certas profissões pertencem a grupos específicos.", "Promover orientação profissional sem discutir desigualdade.", "Afirmar que a discriminação não afeta trajetórias de vida."], "correct": 1,
+    "explanation": "A campanha relaciona estereótipos raciais a oportunidades e procura sensibilizar para os benefícios de enfrentar a discriminação."
+  },
+  {
+    "topic": "literatura-brasileira", "day": 1, "booklet": 2, "examQuestion": 20, "difficulty": 5,
+    "prompt": "Adaptada do ENEM 2025: em um romance brasileiro do século XIX, um pai anuncia que negociou o casamento da filha sem que ela tenha participado da decisão. Que leitura social o episódio permite sustentar?",
+    "options": ["A autonomia feminina era plena nas relações familiares rurais.", "O casamento aparece como escolha exclusivamente individual da jovem.", "A autoridade patriarcal condiciona decisões privadas e a autonomia da personagem.", "O conflito elimina todas as convenções sociais do período.", "O narrador apresenta a relação familiar como desprovida de hierarquia."], "correct": 2,
+    "explanation": "A negociação feita pelo pai evidencia uma estrutura patriarcal na qual a vontade da jovem é subordinada à autoridade familiar."
+  },
+  {
+    "topic": "artes-patrimonio-cultura", "day": 1, "booklet": 2, "examQuestion": 24, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: um povo indígena usa urucum em práticas cotidianas de proteção e relaciona a planta a seres e narrativas de seu território. Como interpretar esse uso?",
+    "options": ["Como decoração sem relação com conhecimentos coletivos.", "Como prática cultural que articula ambiente, cosmologia e proteção.", "Como evidência de que todos os povos indígenas compartilham a mesma crença.", "Como substituição recente de toda relação com plantas cultivadas.", "Como ritual sem significado para a vida comunitária."], "correct": 1,
+    "explanation": "O uso do urucum integra conhecimentos ambientais, cosmologia e práticas de proteção; não se reduz a um ornamento."
+  },
+  {
+    "topic": "portugues-variacao-registros", "day": 1, "booklet": 2, "examQuestion": 31, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma reportagem lista nomes regionais diferentes para preparações culinárias semelhantes. O que essa diversidade evidencia?",
+    "options": ["Uma disputa que define uma única forma correta de nomear o prato.", "Variação lexical ligada a regiões e comunidades de fala.", "A impossibilidade de compreender palavras fora da região de origem.", "Uma mudança exclusivamente gramatical, sem relação com cultura.", "A ausência de padrões locais de uso da língua."], "correct": 1,
+    "explanation": "As denominações mostram variação lexical associada a regiões e práticas culturais, sem tornar uma variedade superior às demais."
+  },
+  {
+    "topic": "educacao-fisica-danca-lutas", "day": 1, "booklet": 2, "examQuestion": 32, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: em uma prática de luta, os participantes reconhecem a habilidade e a intenção combativa do oponente, seguem regras e controlam a força. O que a distingue de uma briga?",
+    "options": ["A existência obrigatória de medalhas.", "O fato de nunca haver contato físico.", "A presença de regras, reconhecimento do outro e controle da ação.", "A ausência de objetivos ou técnicas compartilhadas.", "A intenção de causar dano sem considerar o adversário."], "correct": 2,
+    "explanation": "A luta é uma prática corporal organizada: regras e reconhecimento do oponente orientam o confronto, diferentemente da violência desumanizadora de uma briga."
+  },
+  {
+    "topic": "sociologia-cidadania", "day": 1, "booklet": 2, "examQuestion": 37, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: uma liderança indígena articula reivindicações por território, educação e saúde e prepara novas lideranças comunitárias. Que dimensão da cidadania aparece nesse processo?",
+    "options": ["Cidadania como documento formal, sem participação coletiva.", "Direitos exercidos por mobilização, reconhecimento e continuidade da organização política.", "Representação política restrita a indivíduos sem vínculos comunitários.", "Substituição dos direitos territoriais por ações assistenciais temporárias.", "Abandono das instituições e dos direitos sociais."], "correct": 1,
+    "explanation": "A ação articula participação política coletiva, direitos sociais e reconhecimento territorial, mostrando que cidadania depende também de sua efetivação."
+  },
+  {
+    "topic": "sociologia-midia-tecnologia", "day": 1, "booklet": 2, "examQuestion": 40, "difficulty": 4,
+    "prompt": "Adaptada do ENEM 2025: o rádio manteve público mesmo após a expansão da televisão e de plataformas digitais, adaptando formatos e alcançando regiões com outros níveis de conectividade. Qual conclusão é sustentada?",
+    "options": ["Uma tecnologia sempre substitui completamente a anterior.", "Meios de comunicação podem coexistir e se adaptar a públicos e condições diferentes.", "A internet eliminou diferenças de acesso à informação.", "O rádio deixou de ter função social após a televisão.", "A escolha de um meio depende somente da idade do público."], "correct": 1,
+    "explanation": "A permanência do rádio mostra que tecnologias podem coexistir e atender a condições de acesso e usos distintos."
+  },
+  {
+    "topic": "artes-patrimonio-cultura", "day": 1, "booklet": 2, "examQuestion": 44, "difficulty": 5,
+    "prompt": "Adaptada do ENEM 2025: um banco ritual de um povo amazônico é transmitido entre gerações e aparece em narrativas de origem. Por que ele é patrimônio cultural para essa comunidade?",
+    "options": ["Porque serve apenas como mobiliário funcional.", "Porque sua produção e seus sentidos materiais articulam memória, cosmologia e transmissão cultural.", "Porque objetos sagrados não podem ser usados em práticas contemporâneas.", "Porque a tradição permanece imutável quando é reconhecida como patrimônio.", "Porque seu valor depende exclusivamente do mercado de arte."], "correct": 1,
+    "explanation": "O objeto reúne técnica, memória e cosmologia; sua produção transmite conhecimentos e sentidos entre gerações."
+  },
+  {
+    "topic": "redacao-intervencao", "day": 1, "booklet": 2, "examQuestion": "Proposta de redação", "difficulty": 5,
+    "prompt": "Adaptada da proposta de redação do ENEM 2025 sobre envelhecimento: qual encaminhamento constitui uma intervenção mais completa para combater o isolamento de pessoas idosas?",
+    "options": ["Pedir que cada pessoa idosa resolva o problema sozinha.", "Criar uma campanha sem informar responsável, público ou forma de acompanhamento.", "Delegar toda a responsabilidade às famílias, sem apoio público.", "Propor ação de órgãos de saúde e assistência com atividades acessíveis, participação comunitária e avaliação periódica, respeitando direitos.", "Restringir o acesso a serviços para concentrar recursos em um único grupo."], "correct": 3,
+    "explanation": "A proposta identifica responsáveis e ações, prevê acessibilidade e acompanhamento e respeita direitos, articulando-se ao problema do envelhecimento e do isolamento."
+  }
+]
