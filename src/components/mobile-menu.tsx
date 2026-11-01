@@ -7,10 +7,9 @@ const links = [
   ["Produto", "/#produto"],
   ["Como funciona", "/#como-funciona"],
   ["Planos", "/#planos"],
-  ["Entrar", "/entrar"],
 ];
 
-export function MobileMenu() {
+export function MobileMenu({ isAuthenticated = false }: { isAuthenticated?: boolean }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -29,8 +28,11 @@ export function MobileMenu() {
           {links.map(([label, href]) => (
             <a href={href} key={href} onClick={() => setOpen(false)}>{label}</a>
           ))}
-          <a className="mobile-nav-cta" href="/cadastro" onClick={() => setOpen(false)}>
-            Criar conta gratuita
+          <a href={isAuthenticated ? "/dashboard" : "/entrar"} onClick={() => setOpen(false)}>
+            {isAuthenticated ? "Painel" : "Entrar"}
+          </a>
+          <a className="mobile-nav-cta" href={isAuthenticated ? "/dashboard" : "/cadastro"} onClick={() => setOpen(false)}>
+            {isAuthenticated ? "Abrir painel" : "Criar conta gratuita"}
           </a>
         </nav>
       )}

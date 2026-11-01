@@ -4,6 +4,7 @@ import { connection } from "next/server";
 import { BookOpen, CalendarDays, ClipboardList, CreditCard, LogOut } from "lucide-react";
 import { signOut } from "@/app/(auth)/actions";
 import { Brand } from "@/components/brand";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { QuizWorkspace, type QuizBankTopicOption, type QuizCardData, type QuizTopicOption } from "@/components/quizzes/quiz-workspace";
 import { requireUser } from "@/lib/auth/require-user";
 import { loadPlanAccessForPlan } from "@/lib/plans/access";
@@ -107,16 +108,19 @@ export default function QuizzesPage() {
     <div className="workspace-page">
       <header className="workspace-header">
         <nav aria-label="Navegação do espaço de estudos" className="workspace-header-left">
-          <Brand />
+          <Brand href="/dashboard" />
           <Link className="workspace-nav-link" href="/dashboard"><BookOpen aria-hidden="true" size={15} /> Matérias</Link>
           <Link className="workspace-nav-link" href="/flashcards"><BookOpen aria-hidden="true" size={15} /> Flashcards</Link>
           <span className="workspace-nav-link is-active" aria-current="page"><ClipboardList aria-hidden="true" size={15} /> Simulados</span>
           <Link className="workspace-nav-link" href="/plano"><CalendarDays aria-hidden="true" size={15} /> Plano</Link>
           <Link className="workspace-nav-link" href="/assinatura"><CreditCard aria-hidden="true" size={15} /> Planos</Link>
         </nav>
-        <form action={signOut}>
-          <button className="workspace-logout" type="submit"><LogOut aria-hidden="true" size={15} /> Sair</button>
-        </form>
+        <div className="workspace-header-actions">
+          <ThemeToggle />
+          <form action={signOut}>
+            <button className="workspace-logout" type="submit"><LogOut aria-hidden="true" size={15} /> Sair</button>
+          </form>
+        </div>
       </header>
       <main className="flashcards-page-main">
         <Suspense fallback={<LoadingQuizzes />}>

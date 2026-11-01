@@ -1,13 +1,17 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { Brand } from "@/components/brand";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
     <div className="auth-page">
       <header className="auth-topbar">
         <Brand />
-        <Link href="/">Voltar ao início</Link>
+        <div className="auth-topbar-actions">
+          <ThemeToggle />
+          <Link href="/">Voltar ao início</Link>
+        </div>
       </header>
       <main className="auth-main">
         <div className="auth-decoration" aria-hidden="true">

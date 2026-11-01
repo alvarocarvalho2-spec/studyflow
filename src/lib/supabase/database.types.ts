@@ -489,6 +489,60 @@ export type Database = {
           },
         ]
       }
+      manual_payment_requests: {
+        Row: {
+          amount_cents: number
+          billing_interval: "monthly" | "annual"
+          created_at: string
+          id: string
+          payer_name: string
+          reviewed_at: string | null
+          reviewed_by: string | null
+          status: "pending" | "approved" | "rejected"
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          amount_cents?: number
+          billing_interval: "monthly" | "annual"
+          created_at?: string
+          id?: string
+          payer_name: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: "pending" | "approved" | "rejected"
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          amount_cents?: number
+          billing_interval?: "monthly" | "annual"
+          created_at?: string
+          id?: string
+          payer_name?: string
+          reviewed_at?: string | null
+          reviewed_by?: string | null
+          status?: "pending" | "approved" | "rejected"
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "manual_payment_requests_reviewed_by_fkey"
+            columns: ["reviewed_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "manual_payment_requests_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           created_at: string
@@ -1026,6 +1080,10 @@ export type Database = {
       }
       submit_quiz_attempt: {
         Args: { p_answers: Json; p_quiz_id: string }
+        Returns: string
+      }
+      review_manual_payment_request: {
+        Args: { p_decision: string; p_request_id: string; p_reviewer_id: string }
         Returns: string
       }
     }

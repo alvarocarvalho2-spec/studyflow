@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,7 +30,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
-      <body>{children}</body>
+      <body>
+        <Script id="studyflow-theme-init" strategy="beforeInteractive">
+          {`try {
+            const savedTheme = window.localStorage.getItem("studyflow-theme");
+            if (savedTheme === "light" || savedTheme === "dark") {
+              document.documentElement.dataset.theme = savedTheme;
+            }
+          } catch {}`}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }

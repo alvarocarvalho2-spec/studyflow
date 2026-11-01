@@ -5,6 +5,7 @@ import { BookOpen, CalendarDays, ClipboardList, CreditCard, LogOut } from "lucid
 import { signOut } from "@/app/(auth)/actions";
 import { SmartPlanWorkspace, type PlanGoal, type PlanTaskView, type PlanTopic } from "@/components/smartplan/smartplan-workspace";
 import { Brand } from "@/components/brand";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { requireUser } from "@/lib/auth/require-user";
 import { getDateInTimezone } from "@/lib/smartplan/engine";
 import { hasPlanFeature, loadUserPlanAccess } from "@/lib/plans/access";
@@ -121,16 +122,19 @@ export default function SmartPlanPage() {
     <div className="workspace-page">
       <header className="workspace-header">
         <nav aria-label="Navegação do espaço de estudos" className="workspace-header-left">
-          <Brand />
+          <Brand href="/dashboard" />
           <Link className="workspace-nav-link" href="/dashboard"><BookOpen aria-hidden="true" size={15} /> Matérias</Link>
           <Link className="workspace-nav-link" href="/flashcards"><BookOpen aria-hidden="true" size={15} /> Flashcards</Link>
           <Link className="workspace-nav-link" href="/quizzes"><ClipboardList aria-hidden="true" size={15} /> Simulados</Link>
           <Link className="workspace-nav-link" href="/assinatura"><CreditCard aria-hidden="true" size={15} /> Planos</Link>
           <span aria-current="page" className="workspace-nav-link is-active"><CalendarDays aria-hidden="true" size={15} /> Plano</span>
         </nav>
-        <form action={signOut}>
-          <button className="workspace-logout" type="submit"><LogOut aria-hidden="true" size={15} /> Sair</button>
-        </form>
+        <div className="workspace-header-actions">
+          <ThemeToggle />
+          <form action={signOut}>
+            <button className="workspace-logout" type="submit"><LogOut aria-hidden="true" size={15} /> Sair</button>
+          </form>
+        </div>
       </header>
       <main className="smartplan-page-main">
         <Suspense fallback={<LoadingSmartPlan />}>

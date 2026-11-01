@@ -1,18 +1,8 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useEffect } from "react";
 
 export function ThemeToggle() {
-  useEffect(() => {
-    const savedTheme = window.localStorage.getItem("studyflow-theme");
-    const initialTheme = savedTheme === "dark" || savedTheme === "light"
-      ? savedTheme
-      : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-
-    document.documentElement.dataset.theme = initialTheme;
-  }, []);
-
   function toggleTheme() {
     const currentTheme = document.documentElement.dataset.theme
       ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");

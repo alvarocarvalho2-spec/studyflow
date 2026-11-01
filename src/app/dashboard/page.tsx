@@ -4,6 +4,7 @@ import { connection } from "next/server";
 import { Activity, BookOpen, BookOpenCheck, CalendarDays, ClipboardList, Clock3, CreditCard, LogOut, Trophy } from "lucide-react";
 import { signOut } from "@/app/(auth)/actions";
 import { Brand } from "@/components/brand";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { FocusTimer } from "@/components/dashboard/focus-timer";
 import { SubjectManager, type SubjectWithTopics } from "@/components/subjects/subject-manager";
 import { requireUser } from "@/lib/auth/require-user";
@@ -245,15 +246,18 @@ export default function DashboardPage() {
     <div className="workspace-page">
       <header className="workspace-header">
         <nav aria-label="Navegação do espaço de estudos" className="workspace-header-left">
-          <Brand />
+          <Brand href="/dashboard" />
           <Link className="workspace-nav-link" href="/flashcards"><BookOpen aria-hidden="true" size={15} /> Flashcards</Link>
           <Link className="workspace-nav-link" href="/quizzes"><ClipboardList aria-hidden="true" size={15} /> Simulados</Link>
           <Link className="workspace-nav-link" href="/plano"><CalendarDays aria-hidden="true" size={15} /> Plano</Link>
           <Link className="workspace-nav-link" href="/assinatura"><CreditCard aria-hidden="true" size={15} /> Planos</Link>
         </nav>
-        <form action={signOut}>
-          <button className="workspace-logout" type="submit"><LogOut size={15} /> Sair</button>
-        </form>
+        <div className="workspace-header-actions">
+          <ThemeToggle />
+          <form action={signOut}>
+            <button className="workspace-logout" type="submit"><LogOut size={15} /> Sair</button>
+          </form>
+        </div>
       </header>
       <main className="dashboard-main">
         <Suspense fallback={<LoadingAccount />}>

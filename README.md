@@ -74,9 +74,13 @@ A fase 7 adiciona `/plano`, com disponibilidade semanal editável, metas de prov
 
 As migrations da fase 7 são `supabase/migrations/20261031004359_smartplan_plans_goals.sql` e `supabase/migrations/20261031004424_planned_tasks_user_id_index.sql`.
 
-A fase 8 centraliza nome, benefícios, preços de referência e permissões em `plan_catalog`, e os limites de uso em `plan_limits`. `/assinatura` mostra o plano atual, uso da conta, benefícios e estado informativo da assinatura. O acesso ao SmartPlan é consultado no servidor e protegido novamente pelas policies RLS. A conta de teste permanece Free; o próprio usuário não pode promover seu plano. Os valores Pro são configuráveis e apenas referências: não há checkout, cobrança nem ativação pelo app.
+A fase 8 centraliza nome, benefícios, preços e permissões em `plan_catalog`, e os limites de uso em `plan_limits`. `/assinatura` mostra o plano atual, uso da conta e benefícios. O acesso ao SmartPlan é consultado no servidor e protegido novamente pelas policies RLS. O próprio usuário não pode promover seu plano.
 
-A migration da fase 8 é `supabase/migrations/20261031010110_plan_catalog_subscriptions_entitlements.sql`. Ela adiciona o catálogo Free/Pro, os limites Pro iniciais, a tabela de assinatura com leitura apenas de campos não sensíveis pelo próprio titular e o registro privado de eventos de cobrança para uma futura integração. `supabase/migrations/20261031010147_plan_entitlement_indexes_and_private_policy.sql` adiciona índices para as referências de plano e uma policy restrita ao `service_role` no histórico privado de eventos.
+A migration da fase 8 é `supabase/migrations/20261031010110_plan_catalog_subscriptions_entitlements.sql`. Ela adiciona o catálogo Free/Pro, os limites Pro iniciais, a tabela de assinatura com leitura apenas de campos não sensíveis pelo próprio titular e o registro privado de eventos de cobrança. `supabase/migrations/20261031010147_plan_entitlement_indexes_and_private_policy.sql` adiciona índices para as referências de plano e uma policy restrita ao `service_role` no histórico privado de eventos.
+
+A cobrança usa um QR Code Pix com valor fixo para cada período e uma fila de aprovação manual. No Inter, gere um Pix estático personalizado para o valor mensal e outro para o anual; configure os respectivos códigos copia e cola em `STUDYFLOW_PIX_COPIA_E_COLA_MONTHLY` e `STUDYFLOW_PIX_COPIA_E_COLA_ANNUAL`. Os valores devem corresponder aos preços de `plan_catalog`; se os preços mudarem, gere novos códigos. Configure também `STUDYFLOW_ADMIN_EMAILS` e `SUPABASE_SECRET_KEY` (ou a chave antiga `SUPABASE_SERVICE_ROLE_KEY`) somente no servidor. Depois de conferir o crédito diretamente no Inter, um administrador acessa `/admin/pagamentos` e aprova ou recusa o pedido. A aprovação registra o responsável e ativa/extende o período Pro na mesma transação. Não há renovação automática; cada novo período exige outro Pix e outra aprovação.
+
+A migration de cobrança manual é `supabase/migrations/20261101142717_manual_pix_approval.sql`. Ela guarda o pedido e o valor calculado pelo banco, limita a leitura ao próprio titular, impede alterações do estado pelo usuário e restringe a revisão à chave administrativa do servidor.
 
 Com Docker Desktop disponível para o stack local:
 
@@ -171,13 +175,14 @@ Todas as entidades de usuário levam um `user_id` ou pertencem por uma chave com
 | `study_plans` | Versões do plano, datas e parâmetros de geração. |
 | `planned_tasks` | Blocos planejados, estado e razão da recomendação. |
 | `subscriptions` | Estado comercial controlado pelo servidor; o titular lê somente os campos de status e período. |
+| `manual_payment_requests` | Pedidos Pix do titular e estado de revisão; a aprovação é feita pelo administrador. |
 | `private.subscription_events` | Histórico privado de eventos, escrito por processo confiável. |
 
 Gabaritos de simulados ficarão em schema não exposto ou serão lidos exclusivamente pelo servidor. Índices, unicidade por usuário e constraints serão adicionados junto dos módulos correspondentes.
 
 ## Free, Pro e preços
 
-Os preços mostrados são referências configuráveis em `plan_catalog`, não cobranças ativas. Não existe gateway integrado nem botão de pagamento. Benefícios e permissões ficam no catálogo; limites numéricos ficam em `plan_limits`.
+Os preços mensais e anuais vêm de `plan_catalog`. O pedido Pix registra o preço vigente no momento do pedido; o administrador confere a entrada no Inter antes de aprovar. Benefícios e permissões ficam no catálogo; limites numéricos ficam em `plan_limits`.
 
 | Recurso | Gratuito | Pro (futuro) |
 | --- | --- | --- |
@@ -201,10 +206,11 @@ O algoritmo é determinístico para o mesmo conjunto de dados e versão. Ele cal
 5. **Concluída — simulados e histórico:** editor, correção no banco, gabarito privado e limite Free de 3 aplicado no banco.
 6. **Concluída — dashboard e produtividade:** cartões de resumo com dados reais, revisões pendentes, atividade recente, temporizador persistente de foco associado a um assunto e estado de carregamento responsivo.
 7. **Concluída — SmartPlan:** disponibilidade, metas, agenda determinística de sete dias, justificativas e conclusão de tarefas.
-8. **Concluída — Pro e permissões:** catálogo configurável, página de assinatura informativa, leitura centralizada dos limites e bloqueio do SmartPlan no servidor e no RLS; nenhum pagamento foi ativado.
-9. **Concluída — testes e segurança:** suíte pgTAP com 65 verificações de planos, SmartPlan, assinaturas, limites, isolamento e gabaritos; aplicada a migration `20261031012027_profile_update_column_grants.sql`, que impede usuários de alterar o próprio plano; navegação com landmarks semânticos. A suíte passou no projeto conectado dentro de uma transação com `ROLLBACK`; `npm run lint` e `npx tsc --noEmit` também passaram. Para rodar pgTAP localmente, é necessário iniciar o Supabase local com Docker.
-10. **Em preparação:** deploy Netlify e checklist de produção antes de abrir cadastro público, incluindo a proteção contra senhas vazadas no [Supabase Auth](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection), disponível nos projetos Supabase Pro ou superiores.
+8. **Concluída — Pro e permissões:** catálogo configurável, limites centralizados e bloqueio do SmartPlan no servidor e no RLS.
+9. **Implementada — Pix manual:** QR Code configurável, pedidos pendentes e painel administrativo para conferir e aprovar pagamentos. A migration foi aplicada ao projeto Supabase conectado; as variáveis de ambiente ainda precisam ser configuradas.
+10. **Concluída — testes e segurança:** suíte pgTAP com 65 verificações de planos, SmartPlan, assinaturas, limites, isolamento e gabaritos; aplicada a migration `20261031012027_profile_update_column_grants.sql`, que impede usuários de alterar o próprio plano; navegação com landmarks semânticos. A suíte passou no projeto conectado dentro de uma transação com `ROLLBACK`; `npm run lint` e `npx tsc --noEmit` também passaram. Para rodar pgTAP localmente, é necessário iniciar o Supabase local com Docker.
+11. **Em preparação:** deploy Netlify e checklist de produção antes de abrir cadastro público, incluindo a proteção contra senhas vazadas no [Supabase Auth](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection), disponível nos projetos Supabase Pro ou superiores.
 
 ## Privacidade
 
-O produto minimiza dados pessoais e não pede data de nascimento ou informações de pagamento. Exclusão de conta e política de retenção precisam ser implementadas antes de operar com usuários reais. Não haverá cobrança nem coleta adicional de dados de menores sem validação jurídica e das regras das plataformas envolvidas.
+O produto minimiza dados pessoais; o fluxo Pix pede apenas o nome que aparece no pagamento para ajudar na conferência e não solicita comprovante, senha ou dados de acesso bancário. Exclusão de conta e política de retenção precisam ser implementadas antes de operar com usuários reais. O uso comercial e a cobrança de menores dependem de validação das regras do Inter e da participação do responsável legal, quando aplicável.

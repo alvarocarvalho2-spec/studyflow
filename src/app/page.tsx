@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import Image from "next/image";
 import {
   ArrowDown,
   ArrowRight,
@@ -11,7 +12,6 @@ import {
   Clock3,
   Flame,
   Focus,
-  GraduationCap,
   Layers3,
   Lightbulb,
   Sparkles,
@@ -61,14 +61,49 @@ function Header() {
         </nav>
         <div className="header-actions">
           <ThemeToggle />
+          <Suspense fallback={<HomeAccountActionsFallback />}>
+            <HomeAccountActions />
+          </Suspense>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+async function HomeAccountActions() {
+  await connection();
+  const supabase = await createClient();
+  const { data, error } = await supabase.auth.getClaims();
+  const isAuthenticated = !error && typeof data?.claims?.sub === "string";
+
+  return (
+    <>
+      {isAuthenticated ? (
+        <a className="button button-small button-primary header-cta" href="/dashboard">
+          Abrir painel <ArrowRight aria-hidden="true" size={15} />
+        </a>
+      ) : (
+        <>
           <a className="header-login" href="/entrar">Entrar</a>
           <a className="button button-small button-primary header-cta" href="/cadastro">
             Criar conta grátis <ArrowRight aria-hidden="true" size={15} />
           </a>
-          <MobileMenu />
-        </div>
-      </div>
-    </header>
+        </>
+      )}
+      <MobileMenu isAuthenticated={isAuthenticated} />
+    </>
+  );
+}
+
+function HomeAccountActionsFallback() {
+  return (
+    <>
+      <a className="header-login" href="/entrar">Entrar</a>
+      <a className="button button-small button-primary header-cta" href="/cadastro">
+        Criar conta grátis <ArrowRight aria-hidden="true" size={15} />
+      </a>
+      <MobileMenu />
+    </>
   );
 }
 
@@ -83,7 +118,7 @@ function DashboardPreview() {
       </div>
       <div className="dashboard-preview">
         <div className="preview-sidebar">
-          <div className="preview-brand"><span className="mini-mark"><GraduationCap size={14} /></span><span>studyflow</span></div>
+          <div className="preview-brand"><span aria-hidden="true" className="mini-mark"><Image alt="" className="mini-mark-image" height={82} src="/brand/studyflow-logo-v3-transparent.png" width={82} /></span><span>studyflow</span></div>
           <div className="preview-side-label">MENU</div>
           <div className="preview-side-item active"><Layers3 size={14} /> Visão geral</div>
           <div className="preview-side-item"><BookOpen size={14} /> Matérias</div>
@@ -259,10 +294,10 @@ async function PlansSection() {
           <p className="pricing-annual">{formatPlanPrice(pro.annual_price_cents, pro.currency)} por ano*</p>
           <ul className="benefit-list">{pro.benefits.map((benefit) => <li key={benefit}><Check size={15} />{benefit}</li>)}</ul>
           <p className="pricing-limits">{proLimits.max_subjects} matérias · {proLimits.max_flashcards} flashcards · {proLimits.max_saved_exams} simulados</p>
-          <a className="button button-pro button-full" href="#aviso-planos">Ver situação do Pro <ArrowRight size={15} /></a>
+          <a className="button button-pro button-full" href="/assinatura#checkout-pro">Assinar Pro com Pix <ArrowRight size={15} /></a>
         </article>
       </div>}
-      <p className="pricing-disclaimer" id="aviso-planos">{pro?.pricing_note ?? "Os pagamentos ainda não estão disponíveis."}</p>
+      <p className="pricing-disclaimer" id="aviso-planos">O Pro pode ser assinado por Pix; o acesso é liberado após a conferência manual do pagamento.</p>
     </section>
   );
 }

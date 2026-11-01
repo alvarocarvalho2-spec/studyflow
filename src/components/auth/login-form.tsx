@@ -2,18 +2,22 @@
 
 import Link from "next/link";
 import { useActionState } from "react";
+import { useSearchParams } from "next/navigation";
 import { signIn, type AuthActionState } from "@/app/(auth)/actions";
 
 const initialState: AuthActionState = {};
 
 export function LoginForm() {
   const [state, action, pending] = useActionState(signIn, initialState);
+  const searchParams = useSearchParams();
+  const redirectTo = searchParams.get("redirectTo") ?? "";
   const emailError = state.fieldErrors?.email?.[0];
   const passwordError = state.fieldErrors?.password?.[0];
 
   return (
     <>
       <form action={action} className="auth-form">
+        <input name="redirect_to" type="hidden" value={redirectTo} />
         <label className="auth-field" htmlFor="login-email">
           <span>E-mail</span>
           <input aria-describedby={emailError ? "login-email-error" : undefined} aria-invalid={Boolean(emailError)} autoComplete="email" id="login-email" name="email" placeholder="voce@exemplo.com" required type="email" />
